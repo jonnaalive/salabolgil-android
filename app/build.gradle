@@ -1,0 +1,42 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'kr.salabolgil.app'
+    compileSdk 35
+    useLibrary 'android.car'
+
+    defaultConfig {
+        applicationId 'kr.salabolgil.app'
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName '0.1.0'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    signingConfigs {
+        release {
+            if (System.getenv('SALABOLGIL_KEYSTORE')) {
+                storeFile file(System.getenv('SALABOLGIL_KEYSTORE'))
+                storePassword System.getenv('SALABOLGIL_STORE_PASSWORD')
+                keyAlias System.getenv('SALABOLGIL_KEY_ALIAS') ?: 'salabolgil'
+                keyPassword System.getenv('SALABOLGIL_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            debuggable false
+        }
+    }
+    lint { abortOnError true }
+}
+
+dependencies {
+    implementation 'ai.pleos.playground:NaviHelper:3.0.5'
+}
