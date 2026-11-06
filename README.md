@@ -65,7 +65,7 @@ adb -s emulator-5554 shell am start --user 10 -n kr.salabolgil.app/.MainActivity
 
 실차 검증, 실제 이주 준비자의 사용자 평가, 검증된 지역 시설 데이터 확보, 장시간 주행·배터리·제조사별 검증은 아직 하지 않았다. 모든 앱마켓 심사 요건을 충족한 정식 배포판으로 주장하지 않는다. 영상의 AI 차량 재현과 실제 Android 앱 실행 결과는 별도 산출물이다.
 
-공모전 제출·GitHub 공개·심사용 계정 초대는 수행하지 않았다.
+소스와 APK는 [제출용 공개 저장소](https://github.com/jonnaalive/salabolgil-android)에 함께 보관했다. 공모전 최종 제출은 참가자가 직접 진행한다.
 
 ## 공식 참고 자료
 
